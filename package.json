@@ -1,0 +1,22 @@
+{
+  "name": "mandelbrotset3d",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mandelbrot.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fluqz/MandelbrotSet3D.git"
+  },
+  "author": "Rohla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fluqz/MandelbrotSet3D/issues"
+  },
+  "homepage": "https://github.com/Fluqz/MandelbrotSet3D#readme",
+  "dependencies": {
+    "three": "^0.111.0"
+  }
+}
