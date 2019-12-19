@@ -14,3 +14,12 @@ canvas { margin: 0; overflow: hidden;}
     position: absolute;
     left: calc((100vw / 2) - (100vh / 2));
 }
+
+#reset-btn {
+
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    padding: 0px;
+    margin: 0px;
+}

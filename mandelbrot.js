@@ -20,6 +20,8 @@ window.onload = ()=> {
     let mousedown = false
     let mmReduc = Date.now()
     let storedMM = center
+
+    let resetBtn = document.querySelector('#reset-btn')
    
     let map = (x, minIn, maxIn, minOut, maxOut) => {
 
@@ -161,6 +163,30 @@ window.onload = ()=> {
 
     ctx.putImageData(imageData, 0, 0)
 
+
+
+
+
+
+    let reset = ()=> {
+
+        zoomFactor = 1
+
+        minX = -2
+        maxX = 2
+        minY = -2
+        maxY = 2
+
+        setRangeByCenter(center.x, center.y)
+
+        mandelbrotDraw()
+
+        ctx.putImageData(imageData, 0, 0)
+
+    }
+    resetBtn.addEventListener('click', reset, false)
+
+
     container.addEventListener('mousedown', (e)=> {
 
         mousedown = true
@@ -271,6 +297,7 @@ window.onload = ()=> {
 
         imageData = ctx.getImageData(0, 0, w, h)
         data = imageData.data
+
         center = { x: w/2, y: h/2 }
 
         mandelbrotDraw()
