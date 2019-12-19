@@ -85,7 +85,7 @@ window.onload = ()=> {
         //     scene.remove(o)
         // })
 
-        let maxIterations = 50
+        let maxIterations = 100
 
         for(let x = 0; x < w; x++) {
 
@@ -196,7 +196,6 @@ window.onload = ()=> {
                 y = e.clientY
 
             let c = { x: center.x + (storedMM.x - x), y: center.y + (storedMM.y - y)}
-            console.log(c)
 
             setRangeByCenter(c.x, c.y)
 
@@ -216,8 +215,10 @@ window.onload = ()=> {
         }
         else return
 
-        if(e.deltaY < 0) zoomFactor *= .5
-        else if(e.deltaY > 0) zoomFactor *= 1.5
+        if(e.deltaY > 0) zoomFactor *= 1.5
+        else if(e.deltaY < 0) zoomFactor *= .5
+
+        console.log(zoomFactor)
 
         let rect = container.getClientRects()
 
@@ -240,6 +241,21 @@ window.onload = ()=> {
     container.addEventListener('touchstart', (e)=> { this.onmousedown(e) }, false)
     container.addEventListener('touchmove', (e)=> { this.onmousemove(e) }, false)
     container.addEventListener('touchend', (e)=> { this.onmouseup(e) }, false)
+
+    document.addEventListener('keyup', (e)=> {
+
+        if(e.key == '+') zoomFactor *= .5
+        else if(e.key == '-') zoomFactor *= 1.5
+
+        console.log(zoomFactor)
+
+        setRangeByCenter(center.x, center.y)
+
+        mandelbrotDraw()
+
+        ctx.putImageData(imageData, 0, 0)
+
+    }, false)
 
     window.onresize = () => {
 
