@@ -1,1 +1,6 @@
-# MandelbrotSet3D
+
+
+# Github Pages
+
+fluqz.github.io
+
