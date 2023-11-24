@@ -1,0 +1,1 @@
+@font-face{font-family:Minecraft;src:URL("./Minecraft.ttf") format("truetype")}:root{--c-black: #ffffff;--c-yellow: rgb(255, 191, 0)}*{padding:0;margin:0;color:var(--c-black)}a,a:active{text-decoration:none;color:var(--c-black)}html{font-size:14px;font-family:Minecraft,Courier,Verdana,monospace}body{background-color:var(--c-yellow)}
